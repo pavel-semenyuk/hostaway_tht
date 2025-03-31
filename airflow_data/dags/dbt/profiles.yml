@@ -1,0 +1,12 @@
+hostaway_tht:
+  outputs:
+    dev:
+      dbname: sales
+      host: postgres
+      pass: mysecretpassword
+      port: 5432
+      schema: staging
+      threads: 1
+      type: postgres
+      user: postgres
+  target: dev

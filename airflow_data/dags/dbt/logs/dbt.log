@@ -1,0 +1,30 @@
+[0m23:32:12.613119 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1058b0520>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1066f8280>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1066f8a60>]}
+
+
+============================== 23:32:12.616343 | 4925f377-5982-4f94-bd86-fdd1c0a45f42 ==============================
+[0m23:32:12.616343 [info ] [MainThread]: Running with dbt=1.9.3
+[0m23:32:12.616729 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': '/Users/semenyukpavel/PycharmProjects/sumup_thc/dbt', 'debug': 'False', 'version_check': 'True', 'log_path': 'logs', 'warn_error': 'None', 'fail_fast': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'empty': 'None', 'quiet': 'False', 'no_print': 'None', 'log_format': 'default', 'static_parser': 'True', 'invocation_command': 'dbt init', 'introspect': 'True', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'send_anonymous_usage_stats': 'True'}
+[0m23:32:23.188733 [debug] [MainThread]: Starter project path: /Users/semenyukpavel/.pyenv/versions/3.10.4/lib/python3.10/site-packages/dbt/include/starter_project
+[0m23:32:23.199685 [info ] [MainThread]: 
+Your new dbt project "hostaway_tht" was created!
+
+For more information on how to configure the profiles.yml file,
+please consult the dbt documentation here:
+
+  https://docs.getdbt.com/docs/configure-your-profile
+
+One more thing:
+
+Need help? Don't hesitate to reach out to us via GitHub issues or on Slack:
+
+  https://community.getdbt.com/
+
+Happy modeling!
+
+[0m23:32:23.200529 [info ] [MainThread]: Setting up your profile.
+[0m23:32:55.967507 [info ] [MainThread]: Profile hostaway_tht written to /Users/semenyukpavel/PycharmProjects/sumup_thc/dbt/profiles.yml using target's profile_template.yml and your supplied values. Run 'dbt debug' to validate the connection.
+[0m23:32:55.971413 [debug] [MainThread]: Resource report: {"command_name": "init", "command_success": true, "command_wall_clock_time": 43.411858, "process_in_blocks": "0", "process_kernel_time": 0.120747, "process_mem_max_rss": "92815360", "process_out_blocks": "0", "process_user_time": 0.794087}
+[0m23:32:55.971914 [debug] [MainThread]: Command `dbt init` succeeded at 23:32:55.971814 after 43.41 seconds
+[0m23:32:55.972451 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1058b0520>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1066fa890>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x106c113f0>]}
+[0m23:32:55.972866 [debug] [MainThread]: Flushing usage events
+[0m23:32:56.482394 [debug] [MainThread]: An error was encountered while trying to flush usage events

@@ -1,0 +1,6 @@
+sources:
+  - name: raw
+    schema: raw
+    database: sales
+    tables:
+      - name: sales

@@ -1,0 +1,6 @@
+pytest
+apache-airflow
+pandas
+apache-airflow-providers-postgres
+dbt-core
+dbt-postgres

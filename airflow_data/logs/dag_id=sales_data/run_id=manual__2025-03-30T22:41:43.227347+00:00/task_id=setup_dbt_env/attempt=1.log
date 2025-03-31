@@ -1,0 +1,75 @@
+[2025-03-30T22:41:43.935+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2025-03-30T22:41:43.952+0000] {taskinstance.py:2614} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: sales_data.setup_dbt_env manual__2025-03-30T22:41:43.227347+00:00 [queued]>
+[2025-03-30T22:41:43.956+0000] {taskinstance.py:2614} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: sales_data.setup_dbt_env manual__2025-03-30T22:41:43.227347+00:00 [queued]>
+[2025-03-30T22:41:43.957+0000] {taskinstance.py:2867} INFO - Starting attempt 1 of 1
+[2025-03-30T22:41:43.964+0000] {taskinstance.py:2890} INFO - Executing <Task(BashOperator): setup_dbt_env> on 2025-03-30 22:41:43.227347+00:00
+[2025-03-30T22:41:43.974+0000] {logging_mixin.py:190} WARNING - /home/airflow/.local/lib/python3.12/site-packages/airflow/task/task_runner/standard_task_runner.py:70 DeprecationWarning: This process (pid=1556) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2025-03-30T22:41:43.972+0000] {standard_task_runner.py:104} INFO - Running: ['airflow', 'tasks', 'run', 'sales_data', 'setup_dbt_env', 'manual__2025-03-30T22:41:43.227347+00:00', '--job-id', '46', '--raw', '--subdir', 'DAGS_FOLDER/sales.py', '--cfg-path', '/tmp/tmp5jjep7pn']
+[2025-03-30T22:41:43.975+0000] {standard_task_runner.py:72} INFO - Started process 1558 to run task
+[2025-03-30T22:41:43.975+0000] {standard_task_runner.py:105} INFO - Job 46: Subtask setup_dbt_env
+[2025-03-30T22:41:44.051+0000] {task_command.py:467} INFO - Running <TaskInstance: sales_data.setup_dbt_env manual__2025-03-30T22:41:43.227347+00:00 [running]> on host 2fdd4ef0044b
+[2025-03-30T22:41:44.125+0000] {taskinstance.py:3134} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='airflow' AIRFLOW_CTX_DAG_ID='sales_data' AIRFLOW_CTX_TASK_ID='setup_dbt_env' AIRFLOW_CTX_EXECUTION_DATE='2025-03-30T22:41:43.227347+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-03-30T22:41:43.227347+00:00'
+[2025-03-30T22:41:44.126+0000] {taskinstance.py:732} INFO - ::endgroup::
+[2025-03-30T22:41:44.143+0000] {subprocess.py:78} INFO - Tmp dir root location: /tmp
+[2025-03-30T22:41:44.144+0000] {subprocess.py:88} INFO - Running command: ['/usr/bin/bash', '-c', 'pip install dbt-core dbt-postgres']
+[2025-03-30T22:41:44.157+0000] {subprocess.py:99} INFO - Output:
+[2025-03-30T22:41:45.047+0000] {subprocess.py:106} INFO - Requirement already satisfied: dbt-core in /home/airflow/.local/lib/python3.12/site-packages (1.9.3)
+[2025-03-30T22:41:45.048+0000] {subprocess.py:106} INFO - Requirement already satisfied: dbt-postgres in /home/airflow/.local/lib/python3.12/site-packages (1.9.0)
+[2025-03-30T22:41:45.049+0000] {subprocess.py:106} INFO - Requirement already satisfied: agate<1.10,>=1.7.0 in /home/airflow/.local/lib/python3.12/site-packages (from dbt-core) (1.9.1)
+[2025-03-30T22:41:45.049+0000] {subprocess.py:106} INFO - Requirement already satisfied: Jinja2<4,>=3.1.3 in /home/airflow/.local/lib/python3.12/site-packages (from dbt-core) (3.1.5)
+[2025-03-30T22:41:45.050+0000] {subprocess.py:106} INFO - Requirement already satisfied: mashumaro<3.15,>=3.9 in /home/airflow/.local/lib/python3.12/site-packages (from mashumaro[msgpack]<3.15,>=3.9->dbt-core) (3.14)
+[2025-03-30T22:41:45.050+0000] {subprocess.py:106} INFO - Requirement already satisfied: click<9.0,>=8.0.2 in /home/airflow/.local/lib/python3.12/site-packages (from dbt-core) (8.1.8)
+[2025-03-30T22:41:45.050+0000] {subprocess.py:106} INFO - Requirement already satisfied: networkx<4.0,>=2.3 in /home/airflow/.local/lib/python3.12/site-packages (from dbt-core) (3.4.2)
+[2025-03-30T22:41:45.050+0000] {subprocess.py:106} INFO - Requirement already satisfied: protobuf<6.0,>=5.0 in /home/airflow/.local/lib/python3.12/site-packages (from dbt-core) (5.29.4)
+[2025-03-30T22:41:45.050+0000] {subprocess.py:106} INFO - Requirement already satisfied: requests<3.0.0 in /home/airflow/.local/lib/python3.12/site-packages (from dbt-core) (2.32.3)
+[2025-03-30T22:41:45.051+0000] {subprocess.py:106} INFO - Requirement already satisfied: snowplow-tracker<2.0,>=1.0.2 in /home/airflow/.local/lib/python3.12/site-packages (from dbt-core) (1.1.0)
+[2025-03-30T22:41:45.051+0000] {subprocess.py:106} INFO - Requirement already satisfied: pathspec<0.13,>=0.9 in /home/airflow/.local/lib/python3.12/site-packages (from dbt-core) (0.12.1)
+[2025-03-30T22:41:45.051+0000] {subprocess.py:106} INFO - Requirement already satisfied: sqlparse<0.6.0,>=0.5.0 in /home/airflow/.local/lib/python3.12/site-packages (from dbt-core) (0.5.3)
+[2025-03-30T22:41:45.051+0000] {subprocess.py:106} INFO - Requirement already satisfied: dbt-extractor<=0.6,>=0.5.0 in /home/airflow/.local/lib/python3.12/site-packages (from dbt-core) (0.5.1)
+[2025-03-30T22:41:45.051+0000] {subprocess.py:106} INFO - Requirement already satisfied: dbt-semantic-interfaces<0.8,>=0.7.4 in /home/airflow/.local/lib/python3.12/site-packages (from dbt-core) (0.7.4)
+[2025-03-30T22:41:45.052+0000] {subprocess.py:106} INFO - Requirement already satisfied: dbt-common<2.0,>=1.13.0 in /home/airflow/.local/lib/python3.12/site-packages (from dbt-core) (1.16.0)
+[2025-03-30T22:41:45.052+0000] {subprocess.py:106} INFO - Requirement already satisfied: dbt-adapters<2.0,>=1.10.1 in /home/airflow/.local/lib/python3.12/site-packages (from dbt-core) (1.14.3)
+[2025-03-30T22:41:45.052+0000] {subprocess.py:106} INFO - Requirement already satisfied: packaging>20.9 in /home/airflow/.local/lib/python3.12/site-packages (from dbt-core) (24.2)
+[2025-03-30T22:41:45.052+0000] {subprocess.py:106} INFO - Requirement already satisfied: pytz>=2015.7 in /home/airflow/.local/lib/python3.12/site-packages (from dbt-core) (2025.1)
+[2025-03-30T22:41:45.053+0000] {subprocess.py:106} INFO - Requirement already satisfied: pyyaml>=6.0 in /home/airflow/.local/lib/python3.12/site-packages (from dbt-core) (6.0.2)
+[2025-03-30T22:41:45.053+0000] {subprocess.py:106} INFO - Requirement already satisfied: daff>=1.3.46 in /home/airflow/.local/lib/python3.12/site-packages (from dbt-core) (1.3.46)
+[2025-03-30T22:41:45.053+0000] {subprocess.py:106} INFO - Requirement already satisfied: typing-extensions>=4.4 in /home/airflow/.local/lib/python3.12/site-packages (from dbt-core) (4.12.2)
+[2025-03-30T22:41:45.054+0000] {subprocess.py:106} INFO - Requirement already satisfied: psycopg2-binary<3.0,>=2.9 in /home/airflow/.local/lib/python3.12/site-packages (from dbt-postgres) (2.9.10)
+[2025-03-30T22:41:45.055+0000] {subprocess.py:106} INFO - Requirement already satisfied: Babel>=2.0 in /home/airflow/.local/lib/python3.12/site-packages (from agate<1.10,>=1.7.0->dbt-core) (2.17.0)
+[2025-03-30T22:41:45.056+0000] {subprocess.py:106} INFO - Requirement already satisfied: isodate>=0.5.4 in /home/airflow/.local/lib/python3.12/site-packages (from agate<1.10,>=1.7.0->dbt-core) (0.6.1)
+[2025-03-30T22:41:45.056+0000] {subprocess.py:106} INFO - Requirement already satisfied: leather>=0.3.2 in /home/airflow/.local/lib/python3.12/site-packages (from agate<1.10,>=1.7.0->dbt-core) (0.4.0)
+[2025-03-30T22:41:45.056+0000] {subprocess.py:106} INFO - Requirement already satisfied: parsedatetime!=2.5,>=2.1 in /home/airflow/.local/lib/python3.12/site-packages (from agate<1.10,>=1.7.0->dbt-core) (2.6)
+[2025-03-30T22:41:45.056+0000] {subprocess.py:106} INFO - Requirement already satisfied: python-slugify>=1.2.1 in /home/airflow/.local/lib/python3.12/site-packages (from agate<1.10,>=1.7.0->dbt-core) (8.0.4)
+[2025-03-30T22:41:45.057+0000] {subprocess.py:106} INFO - Requirement already satisfied: pytimeparse>=1.1.5 in /home/airflow/.local/lib/python3.12/site-packages (from agate<1.10,>=1.7.0->dbt-core) (1.1.8)
+[2025-03-30T22:41:45.061+0000] {subprocess.py:106} INFO - Requirement already satisfied: colorama<0.5,>=0.3.9 in /home/airflow/.local/lib/python3.12/site-packages (from dbt-common<2.0,>=1.13.0->dbt-core) (0.4.6)
+[2025-03-30T22:41:45.061+0000] {subprocess.py:106} INFO - Requirement already satisfied: deepdiff<8.0,>=7.0 in /home/airflow/.local/lib/python3.12/site-packages (from dbt-common<2.0,>=1.13.0->dbt-core) (7.0.1)
+[2025-03-30T22:41:45.061+0000] {subprocess.py:106} INFO - Requirement already satisfied: jsonschema<5.0,>=4.0 in /home/airflow/.local/lib/python3.12/site-packages (from dbt-common<2.0,>=1.13.0->dbt-core) (4.23.0)
+[2025-03-30T22:41:45.062+0000] {subprocess.py:106} INFO - Requirement already satisfied: python-dateutil<3.0,>=2.0 in /home/airflow/.local/lib/python3.12/site-packages (from dbt-common<2.0,>=1.13.0->dbt-core) (2.9.0.post0)
+[2025-03-30T22:41:45.063+0000] {subprocess.py:106} INFO - Requirement already satisfied: importlib-metadata<7,>=6.0 in /home/airflow/.local/lib/python3.12/site-packages (from dbt-semantic-interfaces<0.8,>=0.7.4->dbt-core) (6.11.0)
+[2025-03-30T22:41:45.064+0000] {subprocess.py:106} INFO - Requirement already satisfied: more-itertools<11.0,>=8.0 in /home/airflow/.local/lib/python3.12/site-packages (from dbt-semantic-interfaces<0.8,>=0.7.4->dbt-core) (10.6.0)
+[2025-03-30T22:41:45.064+0000] {subprocess.py:106} INFO - Requirement already satisfied: pydantic<3,>=1.10 in /home/airflow/.local/lib/python3.12/site-packages (from dbt-semantic-interfaces<0.8,>=0.7.4->dbt-core) (2.10.6)
+[2025-03-30T22:41:45.065+0000] {subprocess.py:106} INFO - Requirement already satisfied: MarkupSafe>=2.0 in /home/airflow/.local/lib/python3.12/site-packages (from Jinja2<4,>=3.1.3->dbt-core) (3.0.2)
+[2025-03-30T22:41:45.069+0000] {subprocess.py:106} INFO - Requirement already satisfied: msgpack>=0.5.6 in /home/airflow/.local/lib/python3.12/site-packages (from mashumaro[msgpack]<3.15,>=3.9->dbt-core) (1.1.0)
+[2025-03-30T22:41:45.075+0000] {subprocess.py:106} INFO - Requirement already satisfied: charset-normalizer<4,>=2 in /home/airflow/.local/lib/python3.12/site-packages (from requests<3.0.0->dbt-core) (3.4.1)
+[2025-03-30T22:41:45.076+0000] {subprocess.py:106} INFO - Requirement already satisfied: idna<4,>=2.5 in /home/airflow/.local/lib/python3.12/site-packages (from requests<3.0.0->dbt-core) (3.10)
+[2025-03-30T22:41:45.076+0000] {subprocess.py:106} INFO - Requirement already satisfied: urllib3<3,>=1.21.1 in /home/airflow/.local/lib/python3.12/site-packages (from requests<3.0.0->dbt-core) (2.3.0)
+[2025-03-30T22:41:45.076+0000] {subprocess.py:106} INFO - Requirement already satisfied: certifi>=2017.4.17 in /home/airflow/.local/lib/python3.12/site-packages (from requests<3.0.0->dbt-core) (2025.1.31)
+[2025-03-30T22:41:45.084+0000] {subprocess.py:106} INFO - Requirement already satisfied: ordered-set<4.2.0,>=4.1.0 in /home/airflow/.local/lib/python3.12/site-packages (from deepdiff<8.0,>=7.0->dbt-common<2.0,>=1.13.0->dbt-core) (4.1.0)
+[2025-03-30T22:41:45.087+0000] {subprocess.py:106} INFO - Requirement already satisfied: zipp>=0.5 in /home/airflow/.local/lib/python3.12/site-packages (from importlib-metadata<7,>=6.0->dbt-semantic-interfaces<0.8,>=0.7.4->dbt-core) (3.21.0)
+[2025-03-30T22:41:45.088+0000] {subprocess.py:106} INFO - Requirement already satisfied: six in /home/airflow/.local/lib/python3.12/site-packages (from isodate>=0.5.4->agate<1.10,>=1.7.0->dbt-core) (1.17.0)
+[2025-03-30T22:41:45.091+0000] {subprocess.py:106} INFO - Requirement already satisfied: attrs>=22.2.0 in /home/airflow/.local/lib/python3.12/site-packages (from jsonschema<5.0,>=4.0->dbt-common<2.0,>=1.13.0->dbt-core) (25.1.0)
+[2025-03-30T22:41:45.091+0000] {subprocess.py:106} INFO - Requirement already satisfied: jsonschema-specifications>=2023.03.6 in /home/airflow/.local/lib/python3.12/site-packages (from jsonschema<5.0,>=4.0->dbt-common<2.0,>=1.13.0->dbt-core) (2024.10.1)
+[2025-03-30T22:41:45.091+0000] {subprocess.py:106} INFO - Requirement already satisfied: referencing>=0.28.4 in /home/airflow/.local/lib/python3.12/site-packages (from jsonschema<5.0,>=4.0->dbt-common<2.0,>=1.13.0->dbt-core) (0.36.2)
+[2025-03-30T22:41:45.091+0000] {subprocess.py:106} INFO - Requirement already satisfied: rpds-py>=0.7.1 in /home/airflow/.local/lib/python3.12/site-packages (from jsonschema<5.0,>=4.0->dbt-common<2.0,>=1.13.0->dbt-core) (0.22.3)
+[2025-03-30T22:41:45.096+0000] {subprocess.py:106} INFO - Requirement already satisfied: annotated-types>=0.6.0 in /home/airflow/.local/lib/python3.12/site-packages (from pydantic<3,>=1.10->dbt-semantic-interfaces<0.8,>=0.7.4->dbt-core) (0.7.0)
+[2025-03-30T22:41:45.097+0000] {subprocess.py:106} INFO - Requirement already satisfied: pydantic-core==2.27.2 in /home/airflow/.local/lib/python3.12/site-packages (from pydantic<3,>=1.10->dbt-semantic-interfaces<0.8,>=0.7.4->dbt-core) (2.27.2)
+[2025-03-30T22:41:45.100+0000] {subprocess.py:106} INFO - Requirement already satisfied: text-unidecode>=1.3 in /home/airflow/.local/lib/python3.12/site-packages (from python-slugify>=1.2.1->agate<1.10,>=1.7.0->dbt-core) (1.3)
+[2025-03-30T22:41:45.398+0000] {subprocess.py:106} INFO - 
+[2025-03-30T22:41:45.399+0000] {subprocess.py:106} INFO - [notice] A new release of pip is available: 25.0 -> 25.0.1
+[2025-03-30T22:41:45.399+0000] {subprocess.py:106} INFO - [notice] To update, run: pip install --upgrade pip
+[2025-03-30T22:41:45.469+0000] {subprocess.py:110} INFO - Command exited with return code 0
+[2025-03-30T22:41:45.492+0000] {taskinstance.py:341} INFO - ::group::Post task execution logs
+[2025-03-30T22:41:45.492+0000] {taskinstance.py:353} INFO - Marking task as SUCCESS. dag_id=sales_data, task_id=setup_dbt_env, run_id=manual__2025-03-30T22:41:43.227347+00:00, execution_date=20250330T224143, start_date=20250330T224143, end_date=20250330T224145
+[2025-03-30T22:41:45.525+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2025-03-30T22:41:45.538+0000] {taskinstance.py:3901} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-03-30T22:41:45.539+0000] {local_task_job_runner.py:245} INFO - ::endgroup::

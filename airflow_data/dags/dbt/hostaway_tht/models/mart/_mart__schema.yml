@@ -1,0 +1,9 @@
+version: 2
+
+models:
+  - name: sales_metrics
+    columns:
+      - name: sale_date
+        data_tests:
+          - unique
+          - not_null

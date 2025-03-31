@@ -1,0 +1,45 @@
+[2025-03-30T22:48:45.789+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2025-03-30T22:48:45.805+0000] {taskinstance.py:2614} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: sales_data.build_dbt manual__2025-03-30T22:43:24.831899+00:00 [queued]>
+[2025-03-30T22:48:45.811+0000] {taskinstance.py:2614} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: sales_data.build_dbt manual__2025-03-30T22:43:24.831899+00:00 [queued]>
+[2025-03-30T22:48:45.812+0000] {taskinstance.py:2867} INFO - Starting attempt 7 of 7
+[2025-03-30T22:48:45.819+0000] {taskinstance.py:2890} INFO - Executing <Task(BashOperator): build_dbt> on 2025-03-30 22:43:24.831899+00:00
+[2025-03-30T22:48:45.827+0000] {standard_task_runner.py:104} INFO - Running: ['airflow', 'tasks', 'run', 'sales_data', 'build_dbt', 'manual__2025-03-30T22:43:24.831899+00:00', '--job-id', '58', '--raw', '--subdir', 'DAGS_FOLDER/sales.py', '--cfg-path', '/tmp/tmp1t_k_aak']
+[2025-03-30T22:48:45.829+0000] {logging_mixin.py:190} WARNING - /home/airflow/.local/lib/python3.12/site-packages/airflow/task/task_runner/standard_task_runner.py:70 DeprecationWarning: This process (pid=570) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2025-03-30T22:48:45.829+0000] {standard_task_runner.py:105} INFO - Job 58: Subtask build_dbt
+[2025-03-30T22:48:45.829+0000] {standard_task_runner.py:72} INFO - Started process 571 to run task
+[2025-03-30T22:48:45.871+0000] {task_command.py:467} INFO - Running <TaskInstance: sales_data.build_dbt manual__2025-03-30T22:43:24.831899+00:00 [running]> on host 85c8af969f9d
+[2025-03-30T22:48:45.943+0000] {taskinstance.py:3134} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='airflow' AIRFLOW_CTX_DAG_ID='sales_data' AIRFLOW_CTX_TASK_ID='build_dbt' AIRFLOW_CTX_EXECUTION_DATE='2025-03-30T22:43:24.831899+00:00' AIRFLOW_CTX_TRY_NUMBER='7' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-03-30T22:43:24.831899+00:00'
+[2025-03-30T22:48:45.945+0000] {taskinstance.py:732} INFO - ::endgroup::
+[2025-03-30T22:48:45.956+0000] {subprocess.py:78} INFO - Tmp dir root location: /tmp
+[2025-03-30T22:48:45.957+0000] {subprocess.py:88} INFO - Running command: ['/usr/bin/bash', '-c', 'cd ${AIRFLOW_HOME}/dags/dbt/hostaway_tht && dbt build --profiles-dir ./..']
+[2025-03-30T22:48:45.968+0000] {subprocess.py:99} INFO - Output:
+[2025-03-30T22:48:47.411+0000] {subprocess.py:106} INFO - [0m22:48:47  Running with dbt=1.9.3
+[2025-03-30T22:48:47.541+0000] {subprocess.py:106} INFO - [0m22:48:47  Registered adapter: postgres=1.9.0
+[2025-03-30T22:48:47.957+0000] {subprocess.py:106} INFO - [0m22:48:47  Found 1 model, 5 data tests, 1 source, 434 macros
+[2025-03-30T22:48:47.958+0000] {subprocess.py:106} INFO - [0m22:48:47
+[2025-03-30T22:48:47.959+0000] {subprocess.py:106} INFO - [0m22:48:47  Concurrency: 1 threads (target='dev')
+[2025-03-30T22:48:47.959+0000] {subprocess.py:106} INFO - [0m22:48:47
+[2025-03-30T22:48:48.027+0000] {subprocess.py:106} INFO - [0m22:48:48  1 of 6 START sql view model staging.staging__sales ............................. [RUN]
+[2025-03-30T22:48:48.091+0000] {subprocess.py:106} INFO - [0m22:48:48  1 of 6 OK created sql view model staging.staging__sales ........................ [[32mCREATE VIEW[0m in 0.06s]
+[2025-03-30T22:48:48.092+0000] {subprocess.py:106} INFO - [0m22:48:48  2 of 6 START test accepted_values_staging__sales_channel__Offline__Online ...... [RUN]
+[2025-03-30T22:48:48.126+0000] {subprocess.py:106} INFO - [0m22:48:48  2 of 6 PASS accepted_values_staging__sales_channel__Offline__Online ............ [[32mPASS[0m in 0.03s]
+[2025-03-30T22:48:48.127+0000] {subprocess.py:106} INFO - [0m22:48:48  3 of 6 START test not_null_staging__sales_id ................................... [RUN]
+[2025-03-30T22:48:48.145+0000] {subprocess.py:106} INFO - [0m22:48:48  3 of 6 PASS not_null_staging__sales_id ......................................... [[32mPASS[0m in 0.02s]
+[2025-03-30T22:48:48.146+0000] {subprocess.py:106} INFO - [0m22:48:48  4 of 6 START test not_null_staging__sales_product_id ........................... [RUN]
+[2025-03-30T22:48:48.163+0000] {subprocess.py:106} INFO - [0m22:48:48  4 of 6 PASS not_null_staging__sales_product_id ................................. [[32mPASS[0m in 0.02s]
+[2025-03-30T22:48:48.164+0000] {subprocess.py:106} INFO - [0m22:48:48  5 of 6 START test not_null_staging__sales_retailer_id .......................... [RUN]
+[2025-03-30T22:48:48.183+0000] {subprocess.py:106} INFO - [0m22:48:48  5 of 6 PASS not_null_staging__sales_retailer_id ................................ [[32mPASS[0m in 0.02s]
+[2025-03-30T22:48:48.185+0000] {subprocess.py:106} INFO - [0m22:48:48  6 of 6 START test unique_staging__sales_id ..................................... [RUN]
+[2025-03-30T22:48:48.343+0000] {subprocess.py:106} INFO - [0m22:48:48  6 of 6 PASS unique_staging__sales_id ........................................... [[32mPASS[0m in 0.16s]
+[2025-03-30T22:48:48.406+0000] {subprocess.py:106} INFO - [0m22:48:48
+[2025-03-30T22:48:48.407+0000] {subprocess.py:106} INFO - [0m22:48:48  Finished running 5 data tests, 1 view model in 0 hours 0 minutes and 0.45 seconds (0.45s).
+[2025-03-30T22:48:48.483+0000] {subprocess.py:106} INFO - [0m22:48:48
+[2025-03-30T22:48:48.485+0000] {subprocess.py:106} INFO - [0m22:48:48  [32mCompleted successfully[0m
+[2025-03-30T22:48:48.497+0000] {subprocess.py:106} INFO - [0m22:48:48
+[2025-03-30T22:48:48.502+0000] {subprocess.py:106} INFO - [0m22:48:48  Done. PASS=6 WARN=0 ERROR=0 SKIP=0 TOTAL=6
+[2025-03-30T22:48:49.607+0000] {subprocess.py:110} INFO - Command exited with return code 0
+[2025-03-30T22:48:49.854+0000] {taskinstance.py:341} INFO - ::group::Post task execution logs
+[2025-03-30T22:48:49.856+0000] {taskinstance.py:353} INFO - Marking task as SUCCESS. dag_id=sales_data, task_id=build_dbt, run_id=manual__2025-03-30T22:43:24.831899+00:00, execution_date=20250330T224324, start_date=20250330T224845, end_date=20250330T224849
+[2025-03-30T22:48:50.020+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2025-03-30T22:48:50.102+0000] {taskinstance.py:3901} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-03-30T22:48:50.104+0000] {local_task_job_runner.py:245} INFO - ::endgroup::

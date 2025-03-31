@@ -1,0 +1,21 @@
+version: 2
+
+models:
+  - name: intermediate__dim_products
+    columns:
+      - name: id
+        data_tests:
+          - unique
+          - not_null
+  - name: intermediate__dim_retailers
+    columns:
+      - name: id
+        data_tests:
+          - unique
+          - not_null
+  - name: intermediate__fact_sales
+    columns:
+      - name: id
+        data_tests:
+          - unique
+          - not_null
