@@ -10,7 +10,7 @@ The pipeline consists of database preparation (schema/table creation), data inge
 The preparation and ingestion part is handled by the `SalesIngestionOperator` – a custom-written operator that conducts database objects creation, data checks, data cleaning and data loading.
 Then indexes are created using `SQLExecuteQueryOperator` (that runs multiple SQL statements in a row). Afterward a small setup of environment is needed to run dbt.
 This setup and the `dbt build` command are run with the help of `BashOperator`.
-Please see below for run instructions and potential improvements (for example, how would this pipeline look like in a set environment without need of dockerizing everything together).
+Please see below for run instructions and potential improvements.
 
 ### Part 1: Data cleaning
 `_clean_data(df)` checks for data format, handles missing values, drops duplicates and performs type conversions.
