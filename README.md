@@ -33,10 +33,12 @@ A dbt project contains all the transformations. The project is structured into 3
   - This layer contains aggregated data that might be used in reporting layers. Here a sample mart model was chosen with sales metrics per day. 
 
 ## Instructions to run
+- Clone the repository.
+- Run `python3 -m pip install -r requirements.txt` from the root of the repository.
 - Run `docker-compose up -d`. 
-- Go to `localhost:8080`
-- Log in using login `airflow` and password `airflow`
-- Go to "Connections" and add a connection `db` with host `postgres`, database `sales`, login `postgres` and password `mysecretpassword`
+- Go to `localhost:8080`.
+- Log in using login `airflow` and password `airflow`.
+- Go to "Connections" and add a connection `db` with host `postgres`, database `sales`, login `postgres` and password `mysecretpassword`.
 - Enable the DAG `sales` and run it.
 The data should load into all the Postgres database. 
 You can use any database tool (e.g. DBeaver) to connect to the database using credentials found in `profiles.yml` folder (the port should be `6543`).
