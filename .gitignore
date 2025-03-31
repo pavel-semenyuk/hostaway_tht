@@ -1,4 +1,3 @@
-/airflow_data/logs
 .venv
-/airflow_data/dags/__pycache__/*
-/airflow_data/plugins/__pycache__/*
+*.pyc
+*.log
